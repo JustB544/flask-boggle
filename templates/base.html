@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boggle!</title>
+    <link rel="stylesheet" href="/static/style.css?u={{ last_updated }}">
+</head>
+
+<body>
+    <h2 id="timer" class="hide">60</h2>
+    <h1>Boggle!</h1>
+    <h3 id="h_score">High score: <span>{{h_score}}</span></h3>
+    <button id="start">Start!</button>
+    <table class="hide">
+        <tbody>
+            {% for col in board%}
+            <tr>
+                {% for box in col%}
+                <td>{{box}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <form class="hide">
+        <label for="guess">Make your guess!</label>
+        <input id="guess" type="text" />
+        <button id="guess-button">Guess!</button>
+    </form>
+    <h2 id="response" class="hide">OK</h2>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/app.js?u={{ last_updated }}"></script>
+
+</body>
+
+</html>
